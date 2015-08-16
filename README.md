@@ -1,5 +1,7 @@
 # Meetup: [(Responsive) UI Testing mit Galen](http://www.meetup.com/de/sokahh/events/220889092/)
 
+Hier sind alle Unterlagen für das Meetup enthalten
+
 ## Demo App
 
 Build-Status: [![Build Status](https://martinreinhardt-online.de/jenkins/buildStatus/icon?job=SWK_HH_Galen)](https://martinreinhardt-online.de/jenkins/job/SWK_HH_Galen/)
