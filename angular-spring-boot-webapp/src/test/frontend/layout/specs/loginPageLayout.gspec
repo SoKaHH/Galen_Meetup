@@ -1,0 +1,16 @@
+@import shared/commonElements.gspec
+
+@objects
+  usernameInput #username
+  passwordInput #password
+  submit        #login
+
+# concrete layout tests
+
+= Login form visible =
+  usernameInput:
+    visible
+  passwordInput:
+   visible
+  submit:
+   visible
