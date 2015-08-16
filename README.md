@@ -6,6 +6,14 @@ Build-Status: [![Build Status](https://martinreinhardt-online.de/jenkins/buildSt
 
 Siehe [angular-spring-boot-webapp](angular-spring-boot-webapp).
 
+Die Demo kann per Docker lokal ausgeführt werden:
+
+```bash
+$ mvn -Pdocker clean verify
+```
+
+Die App ist dann unter [](http://localhost:40800/) erreichbar.
+
 ## Präsentation
 
-Siehe [presentation](presentation).
+Siehe [](presentation).

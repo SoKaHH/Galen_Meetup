@@ -23,7 +23,7 @@ RUN chmod +x /usr/bin/bootstrap.sh
 # prepare mysql
 RUN /tmp/prepareMySQL.sh NGSPRING ngspring password
 
-EXPOSE 40080
+EXPOSE 40800
 
 # print versions
 RUN java -version

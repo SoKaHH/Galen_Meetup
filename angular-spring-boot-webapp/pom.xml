@@ -192,13 +192,23 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>javascript tests</id>
+                        <id>javascript unit tests</id>
                         <goals>
-                            <goal>karma</goal>
+                            <goal>grunt</goal>
                         </goals>
                         <phase>test</phase>
                         <configuration>
-                            <karmaConfPath>karma.conf.ci.js</karmaConfPath>
+                            <arguments>unit-tests-ci</arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>javascript e2e tests</id>
+                        <goals>
+                            <goal>grunt</goal>
+                        </goals>
+                        <phase>verify</phase>
+                        <configuration>
+                            <arguments>e2e-tests-ci</arguments>
                         </configuration>
                     </execution>
                 </executions>

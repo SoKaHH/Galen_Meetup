@@ -407,11 +407,13 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 singleRun: true
             },
-
             dev: {
                 configFile: 'karma.conf.js',
                 singleRun: false,
                 autoWatch: true
+            },
+            ci: {
+                configFile: 'karma.conf.ci.js'
             }
         },
 
@@ -420,6 +422,17 @@ module.exports = function (grunt) {
                 path: 'http://127.0.0.1:9080',
                 options: {
                     delay: 2000
+                }
+            }
+        },
+        shell: {
+            'galen-ci': {
+                command: './runGalenTests.ci.sh',
+                options: {
+                    stderr: true,
+                    execOptions: {
+                        cwd: './src/test/frontend/layout/'
+                    }
                 }
             }
         }
@@ -448,13 +461,26 @@ module.exports = function (grunt) {
         grunt.task.run(['serve:' + target]);
     });
 
-    grunt.registerTask('test', [
+    grunt.registerTask('unit-tests', [
         'clean:server',
         'wiredep',
         'concurrent:test',
         'autoprefixer',
         'connect:test',
         'karma:unit'
+    ]);
+
+    grunt.registerTask('unit-tests-ci', [
+        'clean:server',
+        'wiredep',
+        'concurrent:test',
+        'autoprefixer',
+        'connect:test',
+        'karma:ci'
+    ]);
+
+    grunt.registerTask('e2e-tests-ci', [
+        'shell:galen-ci'
     ]);
 
     grunt.registerTask('build', [
@@ -484,6 +510,10 @@ module.exports = function (grunt) {
     grunt.registerTask('check', [
         'jshint',
         'build'
+    ]);
+
+    grunt.registerTask('test', [
+        'unit-tests'
     ]);
 
     grunt.registerTask('default', [

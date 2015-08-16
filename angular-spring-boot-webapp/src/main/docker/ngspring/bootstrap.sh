@@ -5,4 +5,4 @@
 
 # run spring boot
 
-java -jar /tmp/ng-spring-boot.jar  --server.port=40080 2> boot-error.log 1> boot-info.log
+java -jar /tmp/ng-spring-boot.jar  --server.port=40800 2> boot-error.log 1> boot-info.log

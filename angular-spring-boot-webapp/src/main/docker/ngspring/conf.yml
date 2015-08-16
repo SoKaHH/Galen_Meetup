@@ -5,10 +5,10 @@ packaging:
     - target/ng-spring-boot.jar
 # optional list of port to expose on the host
 ports:
-  - 40080
+  - 40800
 healthChecks:
   pings:
-    - url: http://localhost:40080/actuator/health
+    - url: http://localhost:40800/actuator/health
       timeout: 80000
 # how long in milliseconds to sleep after start-up (default 0)
 sleep: 5000
