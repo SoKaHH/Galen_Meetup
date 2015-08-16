@@ -6,7 +6,6 @@ Build-Status: [![Build Status](https://martinreinhardt-online.de/jenkins/buildSt
 
 Siehe [angular-spring-boot-webapp](angular-spring-boot-webapp).
 
-## Code Kata
-
-
 ## Präsentation
+
+Siehe [presentation](presentation).
