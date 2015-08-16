@@ -12,8 +12,8 @@ Die Demo kann per Docker lokal ausgeführt werden:
 $ mvn -Pdocker clean verify
 ```
 
-Die App ist dann unter [](http://localhost:40800/) erreichbar.
+Die App ist dann unter [http://localhost:40800/]() erreichbar.
 
 ## Präsentation
 
-Siehe [](presentation).
+Siehe [presentation]().
