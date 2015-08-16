@@ -29,8 +29,8 @@
         <rest-assurred.version>2.4.1</rest-assurred.version>
         <spring-fox.version>2.0.3</spring-fox.version>
         <!-- frontend dependendies -->
-        <node.version>v0.12.7</node.version>
-        <npm.version>2.13.3</npm.version>
+        <node.version>v0.10.40</node.version>
+        <npm.version>1.4.28</npm.version>
         <!-- Maven Plugins -->
         <flyway-maven-plugin.version>3.2.1</flyway-maven-plugin.version>
         <docker-maven-plugin.version>2.5.0</docker-maven-plugin.version>
