@@ -24,7 +24,7 @@ galen.range.approximation=3
 # With this property enabled Galen will scroll page and make screenshots of parts of it.
 # Then it will assemble it in a one big screenshot
 #
-galen.browser.screenshots.fullPage = true
+galen.browser.screenshots.fullPage = false
 galen.browser.screenshots.fullPage.scrollWait = 30
 galen.browser.screenshots.fullPage.scrollTimeout=300
 
