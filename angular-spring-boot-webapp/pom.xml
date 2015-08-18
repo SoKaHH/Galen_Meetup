@@ -29,7 +29,10 @@
         <rest-assurred.version>2.4.1</rest-assurred.version>
         <spring-fox.version>2.0.3</spring-fox.version>
         <!-- frontend dependendies -->
+        <!-- see https://github.com/eirslett/frontend-maven-plugin/issues/250
         <node.version>v0.11.15</node.version>
+        -->
+        <node.version>v0.10.40</node.version>
         <npm.version>3.3.0</npm.version>
         <!-- Maven Plugins -->
         <flyway-maven-plugin.version>3.2.1</flyway-maven-plugin.version>
