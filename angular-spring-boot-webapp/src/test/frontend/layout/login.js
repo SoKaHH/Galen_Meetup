@@ -3,43 +3,32 @@ var userLogin = arg.login,
     userPassword = arg.password,
     goToURL = arg.get;
 
-function waitFor(func) {
-    var timeout = 1000;
 
-    while (timeout > 0 && !func()) {
-        timeout = timeout - 1;
-        Thread.sleep(1000);
+this.LoginPage = $page("Login page", {
+    loader: "xpath: //div[contains(@class,'block-ui-message-container')]//div[contains(@class,'block-ui-message')]",
+    email: "#username",
+    password: "#password",
+    submitButton: "#login",
+
+    load: function () {
+        this.loader.waitToBeHidden(1000);
+        return this;
+    },
+    loginAs: function (userName, password) {
+        this.email.typeText(userName);
+        this.password.typeText(password);
+        this.submitButton.click();
+        this.loader.waitToBeShown(1000);
+        return this.load();
+    },
+    loadPage: function (url) {
+        this.open(url);
+        return this.load();
     }
+});
+// login
+new LoginPage(driver).load()
+    .loginAs(userLogin, userPassword)
+    .loadPage(goToURL);
 
-    if (!func()) {
-        throw new Exception('Wait timeout');
-    }
-}
 
-
-function loginPageIsLoaded() {
-    return driver.findElement(By.id('login')) != null;
-}
-
-function appIsLoaded() {
-    Thread.sleep(1000);
-    return true;
-}
-
-// Waiting till login page is shown
-waitFor(loginPageIsLoaded);
-
-// Here we type user login and password on our login page
-driver.findElement(By.cssSelector('#username')).sendKeys(userLogin);
-driver.findElement(By.cssSelector('#password')).sendKeys(userPassword);
-
-// Submitting the login page
-driver.findElement(By.cssSelector('#login')).click();
-
-// Waiting till app page is shown
-waitFor(appIsLoaded);
-
-driver.get(goToURL);
-
-// Waiting till app page is shown
-waitFor(appIsLoaded);
