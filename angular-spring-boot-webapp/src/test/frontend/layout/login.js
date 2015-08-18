@@ -11,6 +11,10 @@ this.LoginPage = $page("Login page", {
     submitButton: "#login",
 
     load: function () {
+        try {
+            this.loader.waitToBeShown(1000);
+        } catch (ignored) {
+        }
         this.loader.waitToBeHidden(1000);
         return this;
     },
@@ -18,7 +22,6 @@ this.LoginPage = $page("Login page", {
         this.email.typeText(userName);
         this.password.typeText(password);
         this.submitButton.click();
-        this.loader.waitToBeShown(1000);
         return this.load();
     },
     loadPage: function (url) {
